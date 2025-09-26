@@ -19,21 +19,21 @@ void loop() {
     // measure the distance from the sonar
     distance = sonar.ping_cm();
     // check if there's an object detected
-    if ( ______ < ______ && distance > 0 ) {
-      _______ = ______;
+    if ( distance < THRESHOLD && distance > 0 ) {
+      detected = true;
     }
     // button turns alarm off
     if ( digitalRead(BUTTON) == HIGH ) {
-      detected = _______;
+      detected = false;
     }
-    if( detected == ______& ){
+    if( detected == true& ){
       // alarm goes off
       analogWrite(BUZZER_PIN, 127);
-      digitalWrite(LED_PIN, ______);
+      digitalWrite(LED_PIN, HIGH);
     }
     else{
       //turn alarm off as soon as button is pressed
       digitalWrite(LED_PIN, LOW);
-      analogWrite(________, 0);
+      analogWrite(BUZZER_PIN, 0);
     }
 }
