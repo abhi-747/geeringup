@@ -1,19 +1,19 @@
-#define BUZZER_PIN 9
-#define TRIGGER 12
+#define BUZZER_PIN ___
+#define TRIGGER ___
 #define ECHO ___
 #define BUTTON ___
 #define LED_PIN ___
-#define THRESHOLD 20
+#define THRESHOLD ___
 #include<NewPing.h>
 // initialize sonar
 NewPing sonar(TRIGGER, ECHO, 100);
 int distance;
 bool detected;
 void setup() {
-    // initialize pins as input/output
-    pinMode(BUZZER_PIN, ______);
-    pinMode(BUTTON, ______);
-    pinMode(LED_PIN, ______);
+    // initialize pins as INPUT/OUTPUT
+    pinMode(BUZZER_PIN, _______);
+    pinMode(BUTTON, _______);
+    pinMode(LED_PIN, ________);
 }
 void loop() {
     // measure the distance from the sonar
@@ -26,9 +26,9 @@ void loop() {
     if ( digitalRead(BUTTON) == HIGH ) {
       detected = false;
     }
-    if( detected == true& ){
+    if ( detected == true ){
       // alarm goes off
-      analogWrite(BUZZER_PIN, 127);
+      analogWrite(BUZZER_PIN, 200);
       digitalWrite(LED_PIN, HIGH);
     }
     else{
